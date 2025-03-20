@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class HM_3 {
     public static void main(String[] args) {
         /*1. Создать массив дробных (не целых) чисел размером 15 элементов
@@ -10,24 +12,25 @@ public class HM_3 {
         расположенных после первого отрицательного числа и вывести его на экран
         (8, -2, -4, 2, 3, 6, -7) =  11/3*/
 
-        int index = 0;
         float sum = 0;
         int counter = 0;
+        int index = 0;
 
-        for (float nums : list) {
-            float res;
-            if (index < 3) {
-                index++;
-                continue;
-            } else {
-                if (nums < 0) {
-                    continue;
-                }
-                System.out.println(nums);
+        for (int i = 0; i < list.length; i++) {
+            if (list[i] < 0) {
+                index = i;
+                break;
             }
-            sum += nums;
-            counter ++;
         }
+
+        for (int i = index; i < list.length; i++) {
+            if (list[i] > 0) {
+                System.out.println(list[i]);
+                sum += list[i];
+                counter ++;
+            }
+        }
+
         System.out.println("Среднее-арифметическое: " + (sum / counter));
     }
 }
