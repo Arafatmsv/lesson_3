@@ -23,10 +23,10 @@ public class HM_3 {
             }
         }
 
-        for (int i = index; i < list.length; i++) {
-            if (list[i] > 0) {
-                System.out.println(list[i]);
-                sum += list[i];
+        for (float nums : Arrays.copyOfRange(list, index, list.length)) {
+            if (nums > 0) {
+                System.out.println(nums);
+                sum += nums;
                 counter ++;
             }
         }
